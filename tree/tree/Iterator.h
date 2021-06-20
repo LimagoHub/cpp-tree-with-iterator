@@ -104,9 +104,6 @@ private:
 
 	friend bool operator==(const Iterator& lhs, const Iterator& rhs)
 	{
-		if (lhs.current_node_ == nullptr && rhs.current_node_ == nullptr)
-			return true;
-
 		return lhs.current_node_ == rhs.current_node_;
 
 	}
