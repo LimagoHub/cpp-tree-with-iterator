@@ -1,2 +1,6 @@
-﻿  tree.cpp
+﻿  abstract_node.cpp
+  leaf.cpp
+  node.cpp
+  tree.cpp
+  Code wird generiert...
   tree.vcxproj -> C:\Users\JoachimWagner\git\cpp-tree-with-iterator\tree\Debug\tree.exe

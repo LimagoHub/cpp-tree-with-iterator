@@ -32,11 +32,11 @@ public:
 	Iterator& operator++()
 	{
 
-		if (try_find_most_left_child_and_move_iterator_succeeds()) return *this;
+		if (find_most_left_child_and_move_iterator_succeeds()) return *this;
 
-		if (try_find_next_sibling_and_move_iterator_succeeds()) return *this;
+		if (find_next_sibling_and_move_iterator_succeeds()) return *this;
 
-		while (try_find_next_sibling_of_parent_and_move_iterator_failes())
+		while (find_next_sibling_of_ancestor_and_move_iterator_failes())
 		{
 			// Empty
 		}
@@ -53,14 +53,14 @@ private:
 
 
 
-	bool try_find_most_left_child_and_move_iterator_succeeds()
+	bool find_most_left_child_and_move_iterator_succeeds()
 	{
 		if (current_node_is_leaf()) return false;
 		move_to_most_left_child();
 		return true;
 	}
 
-	bool try_find_next_sibling_and_move_iterator_succeeds()
+	bool find_next_sibling_and_move_iterator_succeeds()
 	{
 		if (stack_.empty()) return false;
 		return set_next_sibling_succeeds(current_node_);
@@ -68,7 +68,7 @@ private:
 
 
 
-	bool try_find_next_sibling_of_parent_and_move_iterator_failes()
+	bool find_next_sibling_of_ancestor_and_move_iterator_failes()
 	{
 		if (stack_.size() <= 1) return false;
 
