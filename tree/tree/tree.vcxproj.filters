@@ -32,5 +32,8 @@
     <ClInclude Include="node.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
