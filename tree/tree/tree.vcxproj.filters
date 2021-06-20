@@ -19,16 +19,22 @@
     <Filter Include="Headerdateien\nodes\node_iterators">
       <UniqueIdentifier>{75179cd4-3f49-482d-b642-cc73869b1997}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\nodes">
+      <UniqueIdentifier>{39abb929-58f9-4ae2-8fa7-73843abf90f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tree.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="abstract_node.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="node.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="leaf.cpp">
+      <Filter>Quelldateien\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="abstract_node.cpp">
+      <Filter>Quelldateien\nodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

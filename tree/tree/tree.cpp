@@ -12,10 +12,10 @@ int main()
 	leaf leaf3_{ "Hello" };
 	leaf leaf4_{ "World" };
 	leaf leaf5_{ "Hi" };
-	leaf leaf6_{ "Riedstadt" };
-	leaf leaf7_{ "sieben" };
-	leaf leaf8_{ "acht" };
-	leaf leaf9_{ "neun" };
+	leaf leaf6_{ "Frankfurt" };
+	leaf leaf7_{ "one" };
+	leaf leaf8_{ "two" };
+	leaf leaf9_{ "three" };
 	
 	node root{ "root" };
 
@@ -44,9 +44,12 @@ int main()
 		std::cout << *it << std::endl;
 	}
 
+	std::cout << std::endl << std::endl;
+	
 	std::for_each(root.begin(), root.end(), [](const abstract_node& node) {std::cout << node << std::endl; });
 
-
+	std::cout << std::endl << std::endl;
+	
 	for (auto &item: root)
 	{
 		item.set_name("Hallo: " + item.get_name());
