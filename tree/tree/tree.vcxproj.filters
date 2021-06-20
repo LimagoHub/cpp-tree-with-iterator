@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\nodes">
+      <UniqueIdentifier>{d7546a8e-4174-4284-8dc2-fd3c1da2881c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\nodes\node_iterators">
+      <UniqueIdentifier>{75179cd4-3f49-482d-b642-cc73869b1997}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tree.cpp">
@@ -21,19 +27,22 @@
     <ClCompile Include="abstract_node.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstract_node.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\nodes</Filter>
     </ClInclude>
     <ClInclude Include="leaf.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\nodes</Filter>
     </ClInclude>
     <ClInclude Include="node.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\nodes</Filter>
     </ClInclude>
     <ClInclude Include="Iterator.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\nodes\node_iterators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

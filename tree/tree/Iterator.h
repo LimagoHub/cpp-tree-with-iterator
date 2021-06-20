@@ -1,7 +1,9 @@
 #pragma once
+#include <algorithm>
 #include <iterator>
-
+#include <stack>
 #include "abstract_node.h"
+
 
 
 class Iterator : public std::iterator<

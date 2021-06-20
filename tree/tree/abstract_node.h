@@ -1,5 +1,4 @@
 #pragma once
-#include <algorithm>
 #include <ostream>
 #include <stack>
 #include <string>
@@ -23,54 +22,28 @@ public:
 	virtual ~abstract_node() = default;
 	
 
-	explicit abstract_node(std::string name="undef")
-		: name_(std::move(name)), parent_(nullptr)
-	{
-	}
+	explicit abstract_node(std::string name = "undef");
+	abstract_node(const abstract_node&) = delete;
+	abstract_node& operator = (const abstract_node&) = delete;
+	abstract_node(const abstract_node&&) = delete;
+	abstract_node& operator = (const abstract_node&&) = delete;
 
 	const virtual std::vector<abstract_node*>& get_children();
 	Iterator begin();
 	Iterator end();
 	virtual void print(std::ostream& os) const;
 
-	void set_name(const std::string& name)
-	{
-		name_ = name;
-	}
-
-	void set_parent(abstract_node* const parent)
-	{
-		parent_ = parent;
-	}
-	std::string get_name() const
-	{
-		return name_;
-	}
-
-	abstract_node* get_parent() const
-	{
-		return parent_;
-	}
+	void set_name(const std::string& name);
+	void set_parent(abstract_node* const parent);
+	std::string get_name() const;
+	abstract_node* get_parent() const;
 
 	
-	friend std::ostream& operator<<(std::ostream& os, const abstract_node& obj)
-	{
-		obj.print(os);
-		return os;
-			
-	}
+	friend std::ostream& operator<<(std::ostream& os, const abstract_node& obj);
 
 
-	friend bool operator==(const abstract_node& lhs, const abstract_node& rhs)
-	{
-		return lhs.name_ == rhs.name_
-			&& lhs.parent_ == rhs.parent_;
-	}
-	
+	friend bool operator==(const abstract_node& lhs, const abstract_node& rhs);
 
-	friend bool operator!=(const abstract_node& lhs, const abstract_node& rhs)
-	{
-		return !(lhs == rhs);
-	}
+	friend bool operator!=(const abstract_node& lhs, const abstract_node& rhs);
 };
 

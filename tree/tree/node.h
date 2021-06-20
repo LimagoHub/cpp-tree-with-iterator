@@ -1,5 +1,5 @@
 #pragma once
-#include <algorithm>
+
 #include "abstract_node.h"
 
 class node :
@@ -9,34 +9,14 @@ class node :
 
 public:
 
-	node(const std::string& name)
-		: abstract_node(name)
-	{
-	}
-	void print(std::ostream& os) const override
-	{
-		os << "Node: ";
-		abstract_node::print(os);
-	}
+	node(const std::string& name);
+	void print(std::ostream& os) const override;
 
-	const std::vector<abstract_node*>& get_children() override
-	{
-		return children;
-	}
+	const std::vector<abstract_node*>& get_children() override;
 
-	void append(abstract_node *child)
-	{
-		children.push_back(child);
-		child->set_parent(this);
-	}
+	void append(abstract_node* child);
 
-	void remove(abstract_node* child)
-	{
-		const auto position = std::find(children.begin(), children.end(), child);
-		if (position != children.end())
-			children.erase(position);
-	}
-
+	void remove(abstract_node* child);
 
 };
 
