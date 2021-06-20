@@ -5,7 +5,7 @@
 #include "abstract_node.h"
 
 
-
+// as inner class in abstract_node.h
 class Iterator : public std::iterator<
 		std::input_iterator_tag,   // iterator_category
 		abstract_node,                      // value_type
