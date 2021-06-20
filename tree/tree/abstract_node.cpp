@@ -15,21 +15,6 @@
 
 	}
 
-
-
-	void abstract_node::ausgabe()
-	{
-		// auto myvec = get_iterator();
-		// std::for_each(myvec->begin(), myvec->end(), [](abstract_node& n) {std::cout << n << std::endl; });
-	}
-
-
-	
-
-
-
-	
-
 	const  std::vector<abstract_node*>& abstract_node::get_children()
 	{
 		static std::vector<abstract_node*> dummy{};
@@ -40,10 +25,6 @@
 	{
 		return Iterator{ this };
 	}
-
-	
-
-	
 
 	abstract_node::Iterator abstract_node::end()
 	{

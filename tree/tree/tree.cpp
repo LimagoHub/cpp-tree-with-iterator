@@ -52,8 +52,7 @@ int main()
 		item.set_name("Hallo: " + item.get_name());
 		std::cout << item << std::endl;
 	}
-	e1.ausgabe();
-
+	
 	
 	
 	

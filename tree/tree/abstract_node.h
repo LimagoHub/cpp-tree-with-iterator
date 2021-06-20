@@ -5,15 +5,14 @@
 #include <string>
 #include <vector>
 
+class Iterator;
+
 class abstract_node 
 {
 	friend class Iterator;
 	
 	std::string name_;
 	abstract_node* parent_;
-
-	
-
 	abstract_node * next_sibling() const;
 
 public:
@@ -21,23 +20,18 @@ public:
 	
 	#include "Iterator.h" // Include as inner class
 	
-
-	void ausgabe();
-	
-	
 	virtual ~abstract_node() = default;
+	
 
 	explicit abstract_node(std::string name="undef")
 		: name_(std::move(name)), parent_(nullptr)
 	{
 	}
 
-
-	
-
 	const virtual std::vector<abstract_node*>& get_children();
 	Iterator begin();
 	Iterator end();
+	virtual void print(std::ostream& os) const;
 
 	void set_name(const std::string& name)
 	{
@@ -58,10 +52,6 @@ public:
 		return parent_;
 	}
 
-	
-
-	
-	virtual void print(std::ostream& os) const;
 	
 	friend std::ostream& operator<<(std::ostream& os, const abstract_node& obj)
 	{
