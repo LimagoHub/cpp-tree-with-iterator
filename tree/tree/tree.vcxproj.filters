@@ -18,6 +18,9 @@
     <ClCompile Include="tree.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="abstract_node.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstract_node.h">

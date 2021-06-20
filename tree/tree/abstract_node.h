@@ -12,13 +12,7 @@ class abstract_node
 
 	
 
-	abstract_node * next_sibling() const
-	{
-		auto siblings = get_parent()->get_children();
-		auto position = std::find(siblings.begin(), siblings.end(), this);
-		return ++position != siblings.end() ? *position : nullptr;
-	
-	}
+	abstract_node * next_sibling() const;
 
 public:
 
@@ -135,11 +129,7 @@ public:
 
 	
 
-	void ausgabe()
-	{
-		// auto myvec = get_iterator();
-		// std::for_each(myvec->begin(), myvec->end(), [](abstract_node& n) {std::cout << n << std::endl; });
-	}
+	void ausgabe();
 	
 	
 	virtual ~abstract_node() = default;
@@ -150,6 +140,12 @@ public:
 	}
 
 
+	
+
+	const virtual std::vector<abstract_node*>& get_children();
+	Iterator begin();
+	Iterator end();
+
 	void set_name(const std::string& name)
 	{
 		name_ = name;
@@ -159,18 +155,6 @@ public:
 	{
 		parent_ = parent;
 	}
-
-	const virtual std::vector<abstract_node *> & get_children() 
-	{
-		static std::vector<abstract_node*> dummy{};
-		return dummy;
-	}
-
-	Iterator begin()
-	{
-		return Iterator{ this };
-	}
-
 	std::string get_name() const
 	{
 		return name_;
@@ -181,16 +165,11 @@ public:
 		return parent_;
 	}
 
-	Iterator end()
-	{
-		return Iterator{ nullptr };
-	}
+	
 
 	
-	virtual void print(std::ostream& os) const
-	{
-		os << "name_: " << this->name_ ;
-	}
+	virtual void print(std::ostream& os) const;
+	
 	friend std::ostream& operator<<(std::ostream& os, const abstract_node& obj)
 	{
 		obj.print(os);
